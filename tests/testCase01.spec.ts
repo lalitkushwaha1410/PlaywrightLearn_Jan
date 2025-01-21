@@ -22,7 +22,7 @@ test.describe('Login and Checkout Test Suite', async() => {
   });
 
 
-	test.only(' TC-1 : Login Scenario @smoke', async ({page})=>
+	test(' TC-1 : Login Scenario @smoke', async ({page})=>
 	{       
     await page.goto(env.systest.url_1);
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
