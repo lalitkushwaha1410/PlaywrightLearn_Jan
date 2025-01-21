@@ -28,7 +28,7 @@ test.describe('Login and Checkout Test Suite', async() => {
     //await page.close();
 	});
 
-	test(' TC-2 : Checkout Scenario', async ({page})=>
+	test(' TC-2 : Checkout Scenario @smoke', async ({page})=>
     {
         await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
         await page.getByLabel('Username:').click();
