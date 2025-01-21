@@ -4,7 +4,6 @@ import { LoginPage } from '../Pages/LoginPage';
 import { env } from '../testdata/environment';
 
 
-
 test.describe('Login and Checkout Test Suite', async() => {
 	let loginPage : LoginPage;  // create a object of the class to access its methods
   let addtoCart : AddToCartPage;  
@@ -13,8 +12,7 @@ test.describe('Login and Checkout Test Suite', async() => {
     console.log('This is Before All Hook')
 	});
 
-
-  test.beforeEach(async({page})=>{
+  test.beforeEach( async({page})=> { 
 	
 		loginPage = new LoginPage(page);
     addtoCart = new AddToCartPage(page);
@@ -28,8 +26,7 @@ test.describe('Login and Checkout Test Suite', async() => {
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
     console.log('first test executed');
     //await page.close();
-	}
-	);
+	});
 
 	test(' TC-2 : Checkout Scenario', async ({page})=>
     {
@@ -48,16 +45,14 @@ test.describe('Login and Checkout Test Suite', async() => {
         await page.getByText('I agree with the term & Conditions').click();
         await console.log('Second test executed');
         await page.close();
-    }
-  );
+    });
     
-
     test.afterEach(async()=>{
         console.log('This is After Each Hook')
     });
 
     test.afterAll(async()=>{
         console.log('This is After All Hook')
-    })
+    });
 
 });
