@@ -27,7 +27,7 @@ test.describe('Login and Checkout Test Suite', async() => {
     await page.goto(env.systest.url_1);
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
     console.log('first test executed');
-    await page.close();
+    //await page.close();
 	}
 	);
 
