@@ -1,10 +1,10 @@
 import {Locator, Page} from '@playwright/test';
 
 export class LoginPage {
-    readonly page: Page;
-    readonly usernameInput: Locator; // use of readonly : Page object cannot be reassigned
-    readonly passwordInput: Locator;
-    readonly loginButton: Locator;
+    private readonly page: Page; 
+    private readonly usernameInput: Locator; // use of readonly : Page object cannot be reassigned
+    private readonly passwordInput: Locator; // adding private so that it can be accessed only within the class
+    private readonly loginButton: Locator;
 
     /*
     Immutable Reference: The readonly modifier ensures that once the page object is assigned to a specific 

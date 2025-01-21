@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 import { AddToCartPage } from '../Pages/AddToCartPage';
 import { LoginPage } from '../Pages/LoginPage';
 import { env } from '../testdata/environment';
@@ -28,7 +28,6 @@ test.describe('Login and Checkout Test Suite', async() => {
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
     console.log('first test executed');
     await page.close();
-    
 	}
 	);
 
