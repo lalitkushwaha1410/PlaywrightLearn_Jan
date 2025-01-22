@@ -32,7 +32,7 @@ module.exports = defineConfig({
     screenshot: 'on',
     video: 'on',
   },
-  grep:[new RegExp('@smoke')],
+  //grep:[new RegExp('@smoke')],
 
   /* Configure projects for major browsers */
   projects: [

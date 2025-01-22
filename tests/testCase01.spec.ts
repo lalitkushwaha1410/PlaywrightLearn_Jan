@@ -20,7 +20,7 @@ test.describe('Login and Checkout Test Suite', async() => {
   });
 
 
-	test(' TC-1 : Login Scenario @smoke', async ({page})=>
+	test(' TC-1 : Login Scenario ', async ({page})=>
 	{       
     await page.goto(env.systest.url_1);
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
@@ -28,7 +28,7 @@ test.describe('Login and Checkout Test Suite', async() => {
     //await page.close();
 	});
 
-	test(' TC-2 : Checkout Scenario @smoke', async ({page})=>
+	test(' TC-2 : Checkout Scenario ', async ({page})=>
     {
         await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
         await page.getByLabel('Username:').click();
