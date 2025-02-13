@@ -1,0 +1,41 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_DRIVER: overlay2
+  npm_config_cache: '$CI_PROJECT_DIR/.npm'
+  NOTIFY: 'false'
+  BROWSER: 'chrome'
+  NODE_OPTIONS: "--max-old-space-size=2048000"
+
+stages:
+  - cypress test
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .cache/*
+    - node_modules
+
+Run automation test suite:
+  image: mcr.microsoft.com/playwright:v1.40.0-jammy
+  stage: cypress test
+  script:
+    - echo "Running Automation Tests using Browser :$BROWSER "
+    - yarn add -D @playwright/test
+    - yarn add -D cross-env
+    - yarn playwright install
+    - yarn playwright install chrome
+    - yarn playwright test --list
+    - npx playwright test --reporter=line,allure-playwright
+  after_script:
+    - npx allure generate --clean allure-results
+  artifacts:
+    when: always
+    paths:
+      - ./playwright-report/
+      - ./allure-report
+      - ./allure-results
+    expire_in: 15 days
+    reports:
+      dotenv: test_results.env
+  allow_failure: true
