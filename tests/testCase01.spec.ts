@@ -20,7 +20,7 @@ test.describe('Login and Checkout Test Suite', async() => {
   });
 
 
-	test(' TC-1 : Login Scenario ', async ({page})=>
+	test(' TC-1 : Login Scenario @smoke', async ({page})=>
 	{       
     await page.goto(env.systest.url_1);
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
@@ -46,6 +46,18 @@ test.describe('Login and Checkout Test Suite', async() => {
         await console.log('Second test executed');
         await page.close();
     });
+
+    test(' TC-3  @smoke', async ({page})=>
+      {       
+        console.log("Inside test-3");
+        
+      });
+
+      test(' TC-4  @sanity', async ({page})=>
+        {       
+          console.log("Inside test-4");
+          
+        });
     
     test.afterEach(async()=>{
         console.log('This is After Each Hook')
