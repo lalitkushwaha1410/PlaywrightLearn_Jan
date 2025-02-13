@@ -1,10 +1,10 @@
 import {Locator, Page} from '@playwright/test';
 
-export class LoginPage {
-    private readonly page: Page; 
-    private readonly usernameInput: Locator; // use of readonly : Page object cannot be reassigned
-    private readonly passwordInput: Locator; // adding private so that it can be accessed only within the class
-    private readonly loginButton: Locator;
+export class AddToCartPage {
+    readonly page: Page;
+    readonly usernameInput: Locator; // use of readonly : Page object cannot be reassigned
+    readonly passwordInput: Locator;
+    readonly loginButton: Locator;
 
     /*
     Immutable Reference: The readonly modifier ensures that once the page object is assigned to a specific 
@@ -24,7 +24,7 @@ export class LoginPage {
     The constructor's role is to initialize the class by setting up 
     initial values and configuring the necessary elements from the web page for subsequent interactions.
     */
-    async logIntoApplication(username: string, password: string) {
+    async addItemsToCart(username: string, password: string) {
         await this.usernameInput.fill('rahulshettyacademy');
         await this.passwordInput.fill('learning');
         await this.page.getByLabel('I Agree to the terms and\n\t\t\t\t\t\t\t\t\t\t\tconditions').check();

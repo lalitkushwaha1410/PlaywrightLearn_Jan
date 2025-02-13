@@ -1,36 +1,34 @@
-const {test, expect} = require('@playwright/test');
+import { test, expect } from '@playwright/test';
+import { AddToCartPage } from '../Pages/AddToCartPage';
 import { LoginPage } from '../Pages/LoginPage';
 import { env } from '../testdata/environment';
 
 
-
 test.describe('Login and Checkout Test Suite', async() => {
-	let loginPage : LoginPage;
+	let loginPage : LoginPage;  // create a object of the class to access its methods
+  let addtoCart : AddToCartPage;  
 	
 	test.beforeAll(async()=>{
     console.log('This is Before All Hook')
 	});
 
-
-  test.beforeEach(async({page})=>{
+  test.beforeEach( async({page})=> { 
 	
 		loginPage = new LoginPage(page);
+    addtoCart = new AddToCartPage(page);
     console.log('This is Before Each Hook')
   });
 
 
-	test.only(' TC-1 : Login Scenario @smoke', async ({page})=>
+	test(' TC-1 : Login Scenario ', async ({page})=>
 	{       
-    
     await page.goto(env.systest.url_1);
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
-    await console.log('first test executed');
-    await page.close();
-    
-	}
-	);
+    console.log('first test executed');
+    //await page.close();
+	});
 
-	test(' TC-2 : Checkout Scenario', async ({page})=>
+	test(' TC-2 : Checkout Scenario ', async ({page})=>
     {
         await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
         await page.getByLabel('Username:').click();
@@ -47,16 +45,14 @@ test.describe('Login and Checkout Test Suite', async() => {
         await page.getByText('I agree with the term & Conditions').click();
         await console.log('Second test executed');
         await page.close();
-    }
-  );
+    });
     
-
     test.afterEach(async()=>{
         console.log('This is After Each Hook')
     });
 
     test.afterAll(async()=>{
         console.log('This is After All Hook')
-    })
+    });
 
 });
