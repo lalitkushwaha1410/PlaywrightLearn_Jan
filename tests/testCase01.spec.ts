@@ -58,13 +58,19 @@ test.describe('Login and Checkout Test Suite', async() => {
           console.log("Inside test-4");
           
         });
-    
-    test.afterEach(async()=>{
-        console.log('This is After Each Hook')
-    });
 
-    test.afterAll(async()=>{
-        console.log('This is After All Hook')
-    });
+    test(' TC-5  @sanity', async ({page})=>
+          {       
+            console.log("Inside test-4");
+            
+        });
+    
+    // test.afterEach(async()=>{
+    //     console.log('This is After Each Hook')
+    // });
+
+    // test.afterAll(async()=>{
+    //     console.log('This is After All Hook')
+    // });
 
 });
