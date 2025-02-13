@@ -28,7 +28,7 @@ test.describe('Login and Checkout Test Suite', async() => {
     //await page.close();
 	});
 
-	test(' TC-2 : Checkout Scenario ', async ({page})=>
+	test(' TC-2 : Checkout Scenario @regression ', async ({page})=>
     {
         await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
         await page.getByLabel('Username:').click();
@@ -53,7 +53,7 @@ test.describe('Login and Checkout Test Suite', async() => {
         
       });
 
-      test(' TC-4  @sanity', async ({page})=>
+    test(' TC-4  @sanity', async ({page})=>
         {       
           console.log("Inside test-4");
           
