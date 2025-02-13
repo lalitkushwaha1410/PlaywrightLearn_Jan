@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "run-tests": "npx playwright test",
+    "generateAllure": "allure generate allure-results -o allure-report --clean",
+    "test:report": "yarn run-tests && generateAllure",
+    "allure:clean": "allure clean allure-report",
+    "allure:open": "allure open allure-report"
   },
   "keywords": [],
   "author": "",

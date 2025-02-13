@@ -21,7 +21,11 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'],['allure-playwright']],
+  reporter: [['html'],['allure-playwright', {
+    detail: true,
+    outputFolder: "allure-results",
+    suiteTitle: false
+  }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -32,7 +36,7 @@ module.exports = defineConfig({
     screenshot: 'on',
     video: 'on',
   },
-  //grep:[new RegExp('@smoke')],
+  grep:[new RegExp('@smoke'),new RegExp('@sanity'),new RegExp('@regression')],
 
   /* Configure projects for major browsers */
   projects: [
