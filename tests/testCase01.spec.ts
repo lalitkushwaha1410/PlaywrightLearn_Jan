@@ -20,7 +20,7 @@ test.describe('Login and Checkout Test Suite', async() => {
   });
 
 
-	test(' TC-1 : Login Scenario @smoke', async ({page})=>
+	test(' TestCase-01 : Login Scenario @smoke', async ({page})=>
 	{       
     await page.goto(env.systest.url_1);
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
@@ -28,7 +28,7 @@ test.describe('Login and Checkout Test Suite', async() => {
     //await page.close();
 	});
 
-	test(' TC-2 : Checkout Scenario @regression ', async ({page})=>
+	test(' TestCase-02 : Checkout Scenario @regression ', async ({page})=>
     {
         await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
         await page.getByLabel('Username:').click();
@@ -47,21 +47,27 @@ test.describe('Login and Checkout Test Suite', async() => {
         await page.close();
     });
 
-    test(' TC-3  @smoke', async ({page})=>
+    test(' TestCase-03   @smoke', async ({page})=>
       {       
         console.log("Inside test-3");
         
       });
 
-    test(' TC-4  @sanity', async ({page})=>
+    test(' TestCase-04   @sanity', async ({page})=>
         {       
-          console.log("Inside test-4");
+          console.log("Inside test-5");
           
         });
 
-    test(' TC-5  @sanity', async ({page})=>
+    test(' TestCase-05  @smoke', async ({page})=>
           {       
-            console.log("Inside test-4");
+            console.log("Inside test-5");
+            
+        });
+    
+    test(' TestCase-06  @regression', async ({page})=>
+          {       
+            console.log("Inside test-6");
             
         });
     
