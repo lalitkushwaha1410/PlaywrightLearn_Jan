@@ -4,8 +4,20 @@ variables:
   DOCKER_DRIVER: overlay2
   npm_config_cache: '$CI_PROJECT_DIR/.npm'
   NOTIFY: 'false'
-  BROWSER: 'chrome'
+  BROWSER:
+      value: "chrome"
+      options:
+        - "chrome"
+        - "firefox"
+        - "webkit"
   NODE_OPTIONS: "--max-old-space-size=2048000"
+  ENV:
+    value: "staging"
+    options:
+      - "staging"
+      - "systest"
+      - "integration"
+      - "production"
 
 stages:
   - cypress test

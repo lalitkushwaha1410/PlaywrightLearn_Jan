@@ -13,10 +13,9 @@ test.describe('Login and Checkout Test Suite', async() => {
 	});
 
   test.beforeEach( async({page})=> { 
-	
-		loginPage = new LoginPage(page);
+    loginPage = new LoginPage(page);
     addtoCart = new AddToCartPage(page);
-    console.log('This is Before Each Hook')
+    //console.log('This is Before Each Hook')
   });
 
 
