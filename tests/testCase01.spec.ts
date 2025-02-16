@@ -29,7 +29,7 @@ test.describe('Login and Checkout Test Suite', async() => {
 
 	test(' TestCase-02 : Checkout Scenario @regression ', async ({page})=>
     {
-        console.log('Inside test-2');
+        
         await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
         await page.getByLabel('Username:').click();
         await page.getByLabel('Username:').fill('rahulshettyacademy');
@@ -43,8 +43,8 @@ test.describe('Login and Checkout Test Suite', async() => {
         await page.getByRole('button', { name: 'Checkout' }).click();
         await page.getByLabel('Please choose your delivery location. Then click on purchase button').fill('Gurgaon');
         await page.getByText('I agree with the term & Conditions').click();
-        await console.log('Second test executed');
         await page.close();
+        console.log('Inside test-2');
     });
 
     test(' TestCase-03   @smoke', async ({page})=>
