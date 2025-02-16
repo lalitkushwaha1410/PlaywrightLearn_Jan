@@ -23,12 +23,13 @@ test.describe('Login and Checkout Test Suite', async() => {
 	{       
     await page.goto(env.systest.url_1);
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
-    console.log('first test executed');
+    console.log('Inside test-1');
     //await page.close();
 	});
 
 	test(' TestCase-02 : Checkout Scenario @regression ', async ({page})=>
     {
+        console.log('Inside test-2');
         await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
         await page.getByLabel('Username:').click();
         await page.getByLabel('Username:').fill('rahulshettyacademy');
