@@ -29,7 +29,6 @@ test.describe('Login and Checkout Test Suite', async() => {
 
 	test(' TestCase-02 : Checkout Scenario @regression ', async ({page})=>
     {
-        
         await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
         await page.getByLabel('Username:').click();
         await page.getByLabel('Username:').fill('rahulshettyacademy');
