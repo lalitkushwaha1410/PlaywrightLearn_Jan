@@ -2,12 +2,6 @@
 const { defineConfig, devices } = require('@playwright/test');
 
 /**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// require('dotenv').config();
-
-/**
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
@@ -30,8 +24,6 @@ module.exports = defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
-
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'on',
     video: 'on',
@@ -44,7 +36,6 @@ module.exports = defineConfig({
       name: 'Chrome',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     }
-
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
@@ -83,4 +74,3 @@ module.exports = defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
