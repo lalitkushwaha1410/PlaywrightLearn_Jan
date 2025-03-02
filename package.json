@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "run-tests": "npx playwright test",
+    "run-sanity-tests":"npx playwright test --headed --grep=sanity",
     "generateAllure": "allure generate allure-results -o allure-report --clean",
     "test:report": "yarn run-tests && generateAllure",
     "allure:clean": "allure clean allure-report",
