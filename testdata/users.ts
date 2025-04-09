@@ -1,14 +1,14 @@
 export const user = {
     loginAccess: {
-      username: "wf_reviewer@cha.rbxd.ds",
+      username: "user1@gmail.com",
       password: "Passw0rd",
     },
     creatorAccess: {
-      username: "SptCmsTestEditor@cha.rbxd.ds",
+      username: "user2@gmail.com ",
       password: "Passw0rd",
     },
     noAccess: {
-      username: "wf_noaccess@cha.rbxd.ds",
+      username: "user3@gmail.com",
       password: "Passw0rd",
     }
 }
