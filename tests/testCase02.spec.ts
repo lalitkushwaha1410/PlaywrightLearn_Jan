@@ -16,7 +16,7 @@ test.describe('Test Describe', async() => {
     const page2 = await context2.newPage();
 
     await page1.goto('https://www.google.co.in');
-    await page2.goto('https://www.google.co.in');
+    await page2.goto('https://www.gmail.com');
 
     // Each context has separate storage (no shared session)
     await browser.close();
