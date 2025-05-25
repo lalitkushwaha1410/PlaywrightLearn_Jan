@@ -72,6 +72,25 @@ test.describe('Login and Checkout Test Suite', async() => {
             
         });
     
+    test.only(' Swag app test', async ({page})=>
+        {       
+        await page.goto('https://www.saucedemo.com/v1/index.html');
+        await page.locator('[data-test="username"]').click();
+        await page.locator('[data-test="username"]').fill('standard_user');
+        await page.locator('[data-test="password"]').click();
+        await page.locator('[data-test="password"]').fill('secret_sauce');
+        await page.getByRole('button', { name: 'LOGIN' }).click();
+        await page.locator('div').filter({ hasText: /^\$29\.99ADD TO CART$/ }).getByRole('button').click();
+        await page.getByRole('link', { name: '1' }).click({
+          button: 'right'
+        });
+        await expect(page.locator('#shopping_cart_container')).toContainText('1');
+        await page.getByRole('link', { name: '1' }).click();
+        await page.getByRole('button', { name: 'REMOVE' }).click();
+          
+        });
+
+    
     // test.afterEach(async()=>{
     //     console.log('This is After Each Hook')
     // });
