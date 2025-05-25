@@ -15,11 +15,12 @@ test.describe('Login and Checkout Test Suite', async() => {
   test.beforeEach( async({page})=> { 
     loginPage = new LoginPage(page);
     addtoCart = new AddToCartPage(page);
-    //console.log('This is Before Each Hook')
+    console.log('This is Before Each Hook')
   });
     
-    test.only(' Swag app test', async ({page})=>
-        {       
+    test(' Swag app test  @smoke', async ({page})=>
+        { 
+        console.log('This is test block')
         await page.goto('https://www.saucedemo.com/v1/index.html');
         await page.locator('[data-test="username"]').click();
         await page.locator('[data-test="username"]').fill('standard_user');
