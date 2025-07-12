@@ -25,7 +25,6 @@ test.describe('Login and Checkout Test Suite', async() => {
     await loginPage.logIntoApplication('rahulshettyacademy','learning');
     console.log('Inside test-1');
     
-    
     //await page.close();
 	});
 
