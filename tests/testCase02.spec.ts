@@ -3,7 +3,7 @@ import { test, expect, chromium } from '@playwright/test';
 
 test.describe('Test Describe', async() => { 
 
-	test(' Browser Context Test @smoke', async ({page})=>
+	test(' Browser Context Test @sanity', async ({page})=>
 	{       
     const browser = await chromium.launch();
 

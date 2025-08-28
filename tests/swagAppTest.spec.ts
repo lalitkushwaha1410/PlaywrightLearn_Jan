@@ -18,7 +18,7 @@ test.describe('Login and Checkout Test Suite', async() => {
     console.log('This is Before Each Hook')
   });
     
-    test(' Swag app test  @smoke', async ({page})=>
+    test(' Swag app test  @sanity', async ({page})=>
         { 
         console.log('This is test block')
         await page.goto('https://www.saucedemo.com/v1/index.html');

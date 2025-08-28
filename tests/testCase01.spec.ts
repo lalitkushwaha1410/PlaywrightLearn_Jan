@@ -71,7 +71,7 @@ test.describe('Login and Checkout Test Suite', async() => {
             
         });
     
-    test(' Swag app test @smoke', async ({page})=>
+    test(' Swag app test @regression', async ({page})=>
         {       
         await page.goto('https://www.saucedemo.com/v1/index.html');
         await page.locator('[data-test="username"]').click();
