@@ -13,4 +13,4 @@ COPY . /app
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
  
 # Command to run your Playwright tests
-CMD ["npm", "test"] 
+CMD ["npm", "run-tests"]
